@@ -5,9 +5,10 @@
       url = "github:nix-community/home-manager/release-22.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    vscode-server.url = "github:msteen/nixos-vscode-server";
   };
 
-  outputs = { self, nixpkgs, home-manager }:
+  outputs = { self, nixpkgs, home-manager, vscode-server }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -28,6 +29,10 @@
                 imports = [ ./home.nix ];
               };
             }
+            vscode-server.nixosModule
+            ({ config, pkgs, ... }: {
+              services.vscode-server.enable = true;
+            })
           ];
         };
       };
