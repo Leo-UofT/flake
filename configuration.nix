@@ -29,6 +29,8 @@ in
   nix.package = pkgs.nixFlakes;
   nix.extraOptions = ''
     experimental-features = nix-command flakes
+    keep-outputs = true
+    keep-derivations = true
   '';
 
   environment.systemPackages = with pkgs; [
@@ -37,8 +39,6 @@ in
     git
     gh
   ];
-
-  services.xserver.enable = true;
 
   system.stateVersion = "22.05";
 }
