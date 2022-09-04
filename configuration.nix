@@ -35,6 +35,7 @@ in
     vim
     wget
     git
+    gh
   ];
 
   services.xserver.enable = true;
