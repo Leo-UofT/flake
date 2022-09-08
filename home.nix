@@ -7,6 +7,8 @@
     packages = with pkgs; [
       htop
       xorg.xeyes
+      ghc
+      haskell-language-server
     ];
     stateVersion = "22.05";
   };
