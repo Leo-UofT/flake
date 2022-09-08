@@ -7,7 +7,6 @@
     packages = with pkgs; [
       htop
       xorg.xeyes
-      maven
     ];
     stateVersion = "22.05";
   };
